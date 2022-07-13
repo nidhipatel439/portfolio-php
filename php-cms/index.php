@@ -1,24 +1,26 @@
 <?php
 
-include( 'admin/includes/database.php' );
-include( 'admin/includes/config.php' );
-include( 'admin/includes/functions.php' );
+include('admin/includes/database.php');
+include('admin/includes/config.php');
+include('admin/includes/functions.php');
 
 ?>
 <!doctype html>
 <html>
+
 <head>
-  
+
   <meta charset="UTF-8">
   <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
-  
+
   <title>Website Admin</title>
-  
+
   <link href="styles.css" type="text/css" rel="stylesheet">
-  
+
   <script src="https://cdn.ckeditor.com/ckeditor5/12.4.0/classic/ckeditor.js"></script>
-  
+
 </head>
+
 <body>
 
   <h1>Welcome to My Website!</h1>
@@ -29,7 +31,7 @@ include( 'admin/includes/functions.php' );
   $query = 'SELECT *
     FROM projects
     ORDER BY date DESC';
-  $result = mysqli_query( $connect, $query );
+  $result = mysqli_query($connect, $query);
 
   ?>
 
@@ -37,14 +39,14 @@ include( 'admin/includes/functions.php' );
 
   <hr>
 
-  <?php while($record = mysqli_fetch_assoc($result)): ?>
+  <?php while ($record = mysqli_fetch_assoc($result)) : ?>
 
     <div>
 
       <h2><?php echo $record['title']; ?></h2>
       <?php echo $record['content']; ?>
 
-      <?php if($record['photo']): ?>
+      <?php if ($record['photo']) : ?>
 
         <p>The image can be inserted using a base64 image:</p>
 
@@ -54,7 +56,7 @@ include( 'admin/includes/functions.php' );
 
         <img src="admin/image.php?type=project&id=<?php echo $record['id']; ?>&width=100&height=100">
 
-      <?php else: ?>
+      <?php else : ?>
 
         <p>This record does not have an image!</p>
 
@@ -66,5 +68,39 @@ include( 'admin/includes/functions.php' );
 
   <?php endwhile; ?>
 
+  //////
+
+
+  <?php
+
+  $query = 'SELECT *
+  FROM education
+  ORDER BY start DESC';
+  $result = mysqli_query($connect, $query);
+
+  ?>
+
+  <p>There are <?php echo mysqli_num_rows($result); ?> education in the database!</p>
+
+  <hr>
+
+  <?php while ($record = mysqli_fetch_assoc($result)) : ?>
+
+    <div>
+
+      <h2>Title:<?php echo $record['title']; ?></h2>
+      <p>Start:<?php echo $record['start']; ?></p>
+      <p>End:<?php echo $record['end']; ?></p>
+      <p>Degree:<?php echo $record['degree']; ?></p>
+      <p>Location:<?php echo $record['location']; ?></p>
+    </div>
+
+    <hr>
+
+  <?php endwhile; ?>
+
+
+
 </body>
+
 </html>
