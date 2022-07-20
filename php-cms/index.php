@@ -114,7 +114,7 @@ include('admin/includes/functions.php');
                     <div class="col-4">
                       <div class="card">
                         <?php if ($record['photo']) : ?>
-                          <img src="admin/image.php?type=project&id=<?php echo $record['id']; ?>">
+                          <img src="admin/image.php?type=project&id=<?php echo $record['id']; ?>" style="height:300px">
                         <?php else : ?>
                           <p>This record does not have an image!</p>
                         <?php endif; ?>
