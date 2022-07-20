@@ -1,0 +1,77 @@
+.wrapper {
+  height: 100vh;
+  overflow: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+a {
+  color: inherit;
+}
+.accordion-body {
+  height: calc(100vh - calc(50.6px * 4));
+}
+.education-section-outer {
+  background: #655d8a;
+}
+.education-section {
+  background: #655d8a;
+  box-shadow: -5px -5px 10px rgba(78, 72, 106, 0.2),
+    5px 5px 10px rgba(78, 72, 106, 0.2), -5px 5px 10px rgba(124, 114, 170, 0.9),
+    5px -5px 13px rgba(78, 72, 106, 0.9),
+    inset 1px -1px 2px rgba(124, 114, 170, 0.3),
+    inset -1px 1px 2px rgba(78, 72, 106, 0.5);
+}
+.experience-section-outer {
+  background: #7897ab;
+}
+.experience-section {
+  background: #7897ab;
+  box-shadow: -5px -5px 10px rgba(92, 116, 132, 0.2),
+    5px 5px 10px rgba(92, 116, 132, 0.2), -5px 5px 10px rgba(148, 186, 210, 0.9),
+    5px -5px 13px rgba(92, 116, 132, 0.9),
+    inset 1px -1px 2px rgba(148, 186, 210, 0.3),
+    inset -1px 1px 2px rgba(92, 116, 132, 0.5);
+}
+.project-section-outer {
+  background: #d885a3;
+}
+/* .project-section {
+  background: #d885a3;
+  box-shadow: -5px -5px 10px rgba(166, 102, 126, 0.2),
+    5px 5px 10px rgba(166, 102, 126, 0.2),
+    -5px 5px 10px rgba(255, 164, 200, 0.9),
+    5px -5px 13px rgba(166, 102, 126, 0.9),
+    inset 1px -1px 2px rgba(255, 164, 200, 0.3),
+    inset -1px 1px 2px rgba(166, 102, 126, 0.5);
+} */
+.skill-section-outer {
+  background: #fdceb9;
+}
+.progress-bar {
+  background: #f8ceb9;
+  box-shadow: -1px 1px 2px rgba(154, 128, 115, 0.2),
+    1px -1px 2px rgba(154, 128, 115, 0.2),
+    -1px -1px 2px rgba(255, 255, 255, 0.9), 1px 1px 3px rgba(154, 128, 115, 0.9),
+    inset 1px 1px 2px rgba(255, 255, 255, 0.3),
+    inset -1px -1px 2px rgba(154, 128, 115, 0.5);
+}
+.education-section hr:last-child,
+.experience-section hr:last-child {
+  display: none;
+}
+.progress {
+  height: 25px;
+  background: #f8ceb9;
+  box-shadow: -1px 1px 2px rgba(255, 237, 213, 0.3),
+    1px -1px 2px rgba(211, 175, 157, 0.5),
+    inset 1px 1px 2px rgba(211, 175, 157, 0.2),
+    inset -1px -1px 2px rgba(211, 175, 157, 0.2),
+    inset 1px -1px 2px rgba(255, 237, 213, 0.9),
+    inset -1px 1px 3px rgba(211, 175, 157, 0.9);
+}
+.progress h5 {
+  width: 15%;
+}

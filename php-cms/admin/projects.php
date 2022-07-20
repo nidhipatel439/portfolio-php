@@ -22,8 +22,7 @@ if (isset($_GET['delete'])) {
 include('includes/header.php');
 
 $query = 'SELECT *
-  FROM projects
-  ORDER BY date DESC';
+  FROM projects';
 $result = mysqli_query($connect, $query);
 
 ?>
@@ -34,9 +33,9 @@ $result = mysqli_query($connect, $query);
   <tr>
     <th></th>
     <th align="center">ID</th>
-    <th align="left">Title</th>
-    <th align="center">Type</th>
-    <th align="center">Date</th>
+    <th align="center">Title</th>
+    <th align="center">Github Url</th>
+    <th align="center">Project Url</th>
     <th></th>
     <th></th>
     <th></th>
@@ -51,8 +50,8 @@ $result = mysqli_query($connect, $query);
         <?php echo htmlentities($record['title']); ?>
         <small><?php echo $record['content']; ?></small>
       </td>
-      <td align="center"><?php echo $record['type']; ?></td>
-      <td align="center" style="white-space: nowrap;"><?php echo htmlentities($record['date']); ?></td>
+      <td align="center" style="white-space: nowrap;"><?php echo htmlentities($record['github_url']); ?></td>
+      <td align="center" style="white-space: nowrap;"><?php echo htmlentities($record['project_url']); ?></td>
       <td align="center"><a href="projects_photo.php?id=<?php echo $record['id']; ?>">Photo</i></a></td>
       <td align="center"><a href="projects_edit.php?id=<?php echo $record['id']; ?>">Edit</i></a></td>
       <td align="center">

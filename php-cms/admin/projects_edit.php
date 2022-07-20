@@ -19,9 +19,8 @@ if (isset($_POST['title'])) {
     $query = 'UPDATE projects SET
       title = "' . mysqli_real_escape_string($connect, $_POST['title']) . '",
       content = "' . mysqli_real_escape_string($connect, $_POST['content']) . '",
-      date = "' . mysqli_real_escape_string($connect, $_POST['date']) . '",
-      type = "' . mysqli_real_escape_string($connect, $_POST['type']) . '",
-      url = "' . mysqli_real_escape_string($connect, $_POST['url']) . '"
+      github_url = "' . mysqli_real_escape_string($connect, $_POST['github_url']) . '",
+      github_url = "' . mysqli_real_escape_string($connect, $_POST['project_url']) . '"
       WHERE id = ' . $_GET['id'] . '
       LIMIT 1';
     mysqli_query($connect, $query);
@@ -80,30 +79,14 @@ include('includes/header.php');
 
   <br>
 
-  <label for="url">URL:</label>
-  <input type="text" name="url" id="url" value="<?php echo htmlentities($record['url']); ?>">
+  <label for="github_url">Github Url:</label>
+  <input type="text" name="github_url" id="github_url" value="<?php echo htmlentities($record['github_url']); ?>">
 
   <br>
 
-  <label for="date">Date:</label>
-  <input type="date" name="date" id="date" value="<?php echo htmlentities($record['date']); ?>">
+  <label for="project_url">Project Url:</label>
+  <input type="text" name="project_url" id="project_url" value="<?php echo htmlentities($record['project_url']); ?>">
 
-  <br>
-
-  <label for="type">Type:</label>
-  <?php
-
-  $values = array('Website', 'Graphic Design');
-
-  echo '<select name="type" id="type">';
-  foreach ($values as $key => $value) {
-    echo '<option value="' . $value . '"';
-    if ($value == $record['type']) echo ' selected="selected"';
-    echo '>' . $value . '</option>';
-  }
-  echo '</select>';
-
-  ?>
 
   <br>
 
